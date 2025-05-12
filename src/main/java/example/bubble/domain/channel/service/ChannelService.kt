@@ -15,7 +15,7 @@ class ChannelService(private val channelRepository: ChannelRepository) {
         channelId: String,
         channelTitle: String,
         channelUrl: String,
-        description: String,
+        description: String?,
         userId: String,
         subscriberCount: Long,
         videoCount: Long,

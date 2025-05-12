@@ -12,7 +12,7 @@ class Channel(
     channelId: String,
     channelTitle: String,
     channelUrl: String,
-    description: String,
+    description: String?,
     userId: String,
     subscriberCount: Long,
     videoCount: Long,
@@ -31,7 +31,7 @@ class Channel(
     var channelId: String = channelId
     var channelTitle: String = channelTitle
     var channelUrl: String = channelUrl
-    var description: String = description
+    var description: String = description ?: ""
     var userId: String = userId
     var subscriberCount: Long = subscriberCount
     var videoCount: Long = videoCount

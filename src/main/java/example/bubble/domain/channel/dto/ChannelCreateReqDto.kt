@@ -15,7 +15,7 @@ class ChannelCreateReqDto(
     @NotBlank(message = "channelUrl 항목은 필수입니다.")
     val channelUrl: String,
 
-    val description: String,
+    val description: String?,
 
     @NotBlank(message = "userId 항목은 필수입니다.")
     val userId: String,
