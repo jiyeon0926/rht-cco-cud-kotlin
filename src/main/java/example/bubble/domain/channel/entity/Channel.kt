@@ -1,11 +1,11 @@
-package kotlin.bubble.domain.channel.entity
+package example.bubble.domain.channel.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import java.time.LocalDateTime
-import kotlin.bubble.global.common.entity.BaseEntity
+import example.bubble.global.common.entity.BaseEntity
 
 @Entity(name = "channels")
 class Channel(

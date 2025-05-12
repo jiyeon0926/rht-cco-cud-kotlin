@@ -1,4 +1,4 @@
-package kotlin.bubble;
+package example.bubble;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

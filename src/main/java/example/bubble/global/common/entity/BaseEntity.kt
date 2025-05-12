@@ -1,4 +1,4 @@
-package kotlin.bubble.global.common.entity
+package example.bubble.global.common.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.MappedSuperclass
