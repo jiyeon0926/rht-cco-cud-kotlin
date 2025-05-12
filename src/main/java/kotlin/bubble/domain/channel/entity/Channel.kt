@@ -17,7 +17,7 @@ class Channel(
     subscriberCount: Long,
     videoCount: Long,
     viewCount: Long,
-    partnerId: String?
+    partnerId: String?,
     status: String,
     thumbnails: String,
     registerAt: LocalDateTime,
