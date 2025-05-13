@@ -10,9 +10,10 @@ import java.time.LocalDateTime
 abstract class BaseEntity {
 
     @CreatedDate
-    @Column(updatable = false)
+    @Column(nullable = false, updatable = false)
     var createAt: LocalDateTime = LocalDateTime.now()
 
     @LastModifiedDate
+    @Column(nullable = false)
     var updateAt: LocalDateTime = LocalDateTime.now()
 }
