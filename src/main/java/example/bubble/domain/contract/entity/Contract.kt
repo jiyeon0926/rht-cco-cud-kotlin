@@ -55,4 +55,20 @@ class Contract(
     var testPeriod: LocalDateTime? = testPeriod
 
     var creatorId: String? = creatorId
+
+    fun updateContract(
+        contractFile: String?,
+        commissionRatio: Integer?,
+        contractAt: LocalDateTime?,
+        memo: String?,
+        test: Boolean?,
+        testPeriod: LocalDateTime?
+    ) {
+        contractFile?.let { this.contractFile = it }
+        commissionRatio?.let { this.commissionRatio = it }
+        contractAt?.let { this.contractAt = it }
+        memo?.let { this.memo = it }
+        test?.let { this.test = it }
+        testPeriod?.let { this.testPeriod = it }
+    }
 }
