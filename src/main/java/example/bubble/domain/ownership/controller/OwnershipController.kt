@@ -37,7 +37,7 @@ class OwnershipController(private val ownershipService: OwnershipService) {
     }
 
     // Ownership 수정
-    @PatchMapping
+    @PatchMapping("/{id}")
     fun updateOwnership(
         @PathVariable("id") id: Long,
         @RequestBody ownershipUpdateReqDto: OwnershipUpdateReqDto
@@ -55,7 +55,7 @@ class OwnershipController(private val ownershipService: OwnershipService) {
     }
 
     // Ownership 삭제
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     fun deleteOwnership(@PathVariable("id") id: Long): ResponseEntity<OwnershipResDto> {
         ownershipService.deleteOwnership(id)
 

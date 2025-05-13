@@ -28,6 +28,10 @@ class OwnershipService(private val ownershipRepository: OwnershipRepository) {
         melon: Integer?,
         creatorId: String?
     ): OwnershipResDto {
+        if (!playlist!! || !copyrights!! || !laeeblyForShorts!! || !legal!!) {
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST, "모든 필수 동의 항목에 동의하셔야 합니다.")
+        }
+
         val ownership = Ownership(
             isrc = isrc,
             album = album,
