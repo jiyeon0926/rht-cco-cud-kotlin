@@ -59,4 +59,18 @@ class Ownership(
     var melon: Integer? = melon
 
     var creatorId: String? = creatorId
+
+    fun updateOwnership(
+        isrc: String?,
+        album: String?,
+        musician: String?,
+        shareRatio: Integer?,
+        melon: Integer?
+    ) {
+        isrc?.let { this.isrc = it }
+        album?.let { this.album = it }
+        musician?.let { this.musician = it }
+        shareRatio?.let { this.shareRatio = it }
+        melon?.let { this.melon = it }
+    }
 }
