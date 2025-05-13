@@ -2,7 +2,7 @@ package example.bubble.domain.channel.dto
 
 import java.time.LocalDateTime
 
-class ChannelUpdateReqDto(
+data class ChannelUpdateReqDto(
     val channelId: String?,
     val channelTitle: String?,
     val channelUrl: String?,
