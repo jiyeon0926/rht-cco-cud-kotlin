@@ -57,4 +57,12 @@ class ChannelController(private val channelService: ChannelService) {
 
         return ResponseEntity(channel, HttpStatus.OK)
     }
+
+    // Channel 삭제
+    @DeleteMapping("/{id}")
+    fun deleteChannel(@PathVariable("id") id: Long): ResponseEntity<Void> {
+        channelService.deleteChannel(id)
+
+        return ResponseEntity(HttpStatus.NO_CONTENT)
+    }
 }

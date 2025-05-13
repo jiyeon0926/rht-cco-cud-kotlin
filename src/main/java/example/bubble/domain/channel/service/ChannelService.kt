@@ -115,4 +115,12 @@ class ChannelService(private val channelRepository: ChannelRepository) {
             channel.updateAt
         )
     }
+
+    @Transactional
+    fun deleteChannel(id: Long) {
+        val channel = channelRepository.findById(id)
+            .orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 id 입니다: $id") }
+
+        channelRepository.delete(channel)
+    }
 }
