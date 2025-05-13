@@ -1,15 +1,13 @@
 package example.bubble.domain.channel.controller
 
+import example.bubble.domain.channel.dto.ChannelCreateReqDto
+import example.bubble.domain.channel.dto.ChannelResDto
+import example.bubble.domain.channel.dto.ChannelUpdateReqDto
+import example.bubble.domain.channel.service.ChannelService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
-import example.bubble.domain.channel.dto.ChannelCreateReqDto
-import example.bubble.domain.channel.dto.ChannelResDto
-import example.bubble.domain.channel.service.ChannelService
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/channels")
@@ -35,5 +33,28 @@ class ChannelController(private val channelService: ChannelService) {
         )
 
         return ResponseEntity(channel, HttpStatus.CREATED)
+    }
+
+    // Channel 수정
+    @PatchMapping("/{id}")
+    fun updateChannel(
+        @PathVariable("id") id: Long,
+        @RequestBody channelUpdateReqDto: ChannelUpdateReqDto
+    ): ResponseEntity<ChannelResDto> {
+        val channel = channelService.updateChannel(
+            id,
+            channelUpdateReqDto.channelId,
+            channelUpdateReqDto.channelTitle,
+            channelUpdateReqDto.channelUrl,
+            channelUpdateReqDto.description,
+            channelUpdateReqDto.subscriberCount,
+            channelUpdateReqDto.videoCount,
+            channelUpdateReqDto.viewCount,
+            channelUpdateReqDto.status,
+            channelUpdateReqDto.thumbnails,
+            channelUpdateReqDto.registerAt
+        )
+
+        return ResponseEntity(channel, HttpStatus.OK)
     }
 }
