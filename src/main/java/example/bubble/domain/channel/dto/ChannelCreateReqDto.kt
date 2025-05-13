@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull
 import java.time.LocalDateTime
 
 data class ChannelCreateReqDto(
-
     @field:NotBlank(message = "channelId 항목은 필수입니다.")
     val channelId: String?,
 
