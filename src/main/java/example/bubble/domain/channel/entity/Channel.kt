@@ -1,26 +1,23 @@
 package example.bubble.domain.channel.entity
 
 import example.bubble.global.common.entity.BaseEntity
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 import java.time.LocalDateTime
 
 @Entity(name = "channels")
 class Channel(
-    channelId: String,
-    channelTitle: String,
-    channelUrl: String,
+    channelId: String?,
+    channelTitle: String?,
+    channelUrl: String?,
     description: String?,
-    userId: String,
-    subscriberCount: Long,
-    videoCount: Long,
-    viewCount: Long,
+    userId: String?,
+    subscriberCount: Long?,
+    videoCount: Long?,
+    viewCount: Long?,
     partnerId: String?,
-    status: String,
-    thumbnails: String,
-    registerAt: LocalDateTime,
+    status: String?,
+    thumbnails: String?,
+    registerAt: LocalDateTime?,
     creatorId: String?
 ) : BaseEntity() {
 
@@ -28,18 +25,41 @@ class Channel(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
 
-    var channelId: String = channelId
-    var channelTitle: String = channelTitle
-    var channelUrl: String = channelUrl
-    var description: String = description ?: ""
-    var userId: String = userId
-    var subscriberCount: Long = subscriberCount
-    var videoCount: Long = videoCount
-    var viewCount: Long = viewCount
+    @Column(nullable = false)
+    var channelId: String? = channelId
+
+    @Column(nullable = false)
+    var channelTitle: String? = channelTitle
+
+    @Column(nullable = false)
+    var channelUrl: String? = channelUrl
+
+    @Column(nullable = false)
+    var description: String? = description ?: ""
+
+    @Column(nullable = false)
+    var userId: String? = userId
+
+    @Column(nullable = false)
+    var subscriberCount: Long? = subscriberCount
+
+    @Column(nullable = false)
+    var videoCount: Long? = videoCount
+
+    @Column(nullable = false)
+    var viewCount: Long? = viewCount
+
     var partnerId: String? = partnerId
-    var status: String = status
-    var thumbnails: String = thumbnails
-    var registerAt: LocalDateTime = registerAt
+
+    @Column(nullable = false)
+    var status: String? = status
+
+    @Column(nullable = false)
+    var thumbnails: String? = thumbnails
+
+    @Column(nullable = false)
+    var registerAt: LocalDateTime? = registerAt
+
     var creatorId: String? = creatorId
 
     fun updateChannel(

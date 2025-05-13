@@ -14,18 +14,18 @@ class ChannelService(private val channelRepository: ChannelRepository) {
 
     @Transactional
     fun createChannel(
-        channelId: String,
-        channelTitle: String,
-        channelUrl: String,
+        channelId: String?,
+        channelTitle: String?,
+        channelUrl: String?,
         description: String?,
-        userId: String,
-        subscriberCount: Long,
-        videoCount: Long,
-        viewCount: Long,
+        userId: String?,
+        subscriberCount: Long?,
+        videoCount: Long?,
+        viewCount: Long?,
         partnerId: String?,
-        status: String,
-        thumbnails: String,
-        registerAt: LocalDateTime,
+        status: String?,
+        thumbnails: String?,
+        registerAt: LocalDateTime?,
         creatorId: String?
     ): ChannelResDto {
         val channel = Channel(
